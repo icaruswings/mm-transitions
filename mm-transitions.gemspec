@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/mm-transitions.rb",
+    "mm-transitions.gemspec",
     "spec/mm-transitions_spec.rb",
     "spec/spec_helper.rb",
     "spec/support/models.rb"
