@@ -1,6 +1,36 @@
 = mm-transitions
 
-Description goes here.
+A simple MongoMapper plugin to add the Transitions State Machine to your documents
+
+
+== Usage
+
+Install the gem
+  
+    gem install mm-transitions
+
+
+Or add it to your Gemfile
+
+    gem 'mm-transitions'
+  
+  
+Then add the mm-transitions plugin to you MongoMapper::Document
+
+    class Post
+      include MongoMapper::Document
+      plugin MongoMapper::Plugins::Transitions
+      
+    end
+
+    @post = Post.create
+    @commentor = User.create
+
+    @post.add_comment!("great post..", @user)
+
+    @post.comments_count # => 1
+    @posts.comments # => [<Comment>]
+
 
 == Contributing to mm-transitions
  
