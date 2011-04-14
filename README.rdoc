@@ -11,25 +11,46 @@ Install the gem
 
 
 Or add it to your Gemfile
-
-    gem 'mm-transitions'
   
+    gem 'mm-transitions'
+
   
 Then add the mm-transitions plugin to you MongoMapper::Document
 
-    class Post
+    class User
       include MongoMapper::Document
       plugin MongoMapper::Plugins::Transitions
       
+      state_machine do
+        state :pending
+        state :active
+        
+        event :activate do
+          transitions :to => :active, :from => [:pending]
+        end
+        
+      end
     end
 
-    @post = Post.create
-    @commentor = User.create
+    user = User.create
+    user.current_state => :pending
 
-    @post.add_comment!("great post..", @user)
+    user.activate
+    user.current_state => :active
+    user.reload
+    user.current_state => :pending
 
-    @post.comments_count # => 1
-    @posts.comments # => [<Comment>]
+    user.activate!
+    user.current_state => :active
+    user.reload
+    user.current_state => :active
+    
+
+== More Info
+
+for more information check out:
+** [the specs](https://github.com/icaruswings/mm-transitions/blob/master/spec/mm-transitions_spec.rb)
+** [the transitions gem](https://github.com/qoobaa/transitions)
 
 
 == Contributing to mm-transitions

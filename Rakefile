@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "mm-transitions"
   gem.homepage = "http://github.com/icaruswings/mm-transitions"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{a simple mongomapper plugin to add a full featured state machine to your models}
+  gem.description = %Q{a simple mongomapper plugin to add a full featured state machine to your models}
   gem.email = "luke@icaruswings.com"
   gem.authors = ["Luke Cunningham"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
