@@ -49,8 +49,9 @@ Then add the mm-transitions plugin to you MongoMapper::Document
 == More Info
 
 for more information check out:
-** [the specs](https://github.com/icaruswings/mm-transitions/blob/master/spec/mm-transitions_spec.rb)
-** [the transitions gem](https://github.com/qoobaa/transitions)
+
+* [the specs](https://github.com/icaruswings/mm-transitions/blob/master/spec/mm-transitions_spec.rb)
+* [the transitions gem](https://github.com/qoobaa/transitions)
 
 
 == Contributing to mm-transitions
